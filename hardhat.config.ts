@@ -3,6 +3,7 @@ import '@nomicfoundation/hardhat-toolbox';
 import '@nomicfoundation/hardhat-ethers';
 import 'hardhat-deploy';
 import 'hardhat-deploy-ethers';
+import 'solidity-coverage';
 import 'dotenv/config';
 
 const config: HardhatUserConfig = {
