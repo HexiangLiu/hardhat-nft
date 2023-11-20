@@ -42,6 +42,7 @@ const deploy = async (hre: HardhatRuntimeEnvironment) => {
     'ipfs://Qme7ou5k37gvamBBUD4rxqUjEDr2fNoxx4DobyVtddx1V6',
     'ipfs://QmUAvpzSLCBWCXSfjs3SHWWddt6dPNEShemB6awi2Vwc5m',
   ];
+  let VRFCoordinatorV2Mock: VRFCoordinatorV2Mock;
   const mintFee = ethers.parseEther('0.01');
 
   // get the tokenURI of our images
@@ -52,7 +53,7 @@ const deploy = async (hre: HardhatRuntimeEnvironment) => {
   }
 
   if (developmentChains.includes(network.name)) {
-    const VRFCoordinatorV2Mock: VRFCoordinatorV2Mock = await ethers.getContract(
+    VRFCoordinatorV2Mock = await ethers.getContract(
       'VRFCoordinatorV2Mock',
       deployer
     );
@@ -80,6 +81,15 @@ const deploy = async (hre: HardhatRuntimeEnvironment) => {
     args,
     log: true,
   });
+
+  if (developmentChains.includes(network.name)) {
+    // @ts-ignore
+    await VRFCoordinatorV2Mock.addConsumer(
+      subscriptionId,
+      RandomIpfsNFT.address
+    );
+  }
+
   if (!developmentChains.includes(network.name)) {
     log('Verifying...');
     await verify(RandomIpfsNFT.address, args);
