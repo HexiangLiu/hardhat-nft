@@ -1,3 +1,5 @@
+import { ethers } from 'hardhat';
+
 export const developmentChains = ['localhost', 'hardhat'];
 
 export const _BASEFEE = 100000000000000000n;
@@ -20,3 +22,5 @@ export const networkConfig: Record<string, any> = {
     callbackGasLimit: 400000,
   },
 };
+
+export const mintFee = ethers.parseEther('0.01');

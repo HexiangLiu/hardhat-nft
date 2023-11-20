@@ -1,7 +1,7 @@
 import { ethers, getNamedAccounts, network } from 'hardhat';
 import path from 'path';
 import { HardhatRuntimeEnvironment } from 'hardhat/types';
-import { _amount, developmentChains, networkConfig } from '../const';
+import { _amount, developmentChains, networkConfig, mintFee } from '../const';
 import { VRFCoordinatorV2Mock } from '../typechain-types';
 import verify from '../utils/verify';
 import { storeImages, storeMetaData } from '../utils/uploadToPinata';
@@ -43,7 +43,6 @@ const deploy = async (hre: HardhatRuntimeEnvironment) => {
     'ipfs://QmUAvpzSLCBWCXSfjs3SHWWddt6dPNEShemB6awi2Vwc5m',
   ];
   let VRFCoordinatorV2Mock: VRFCoordinatorV2Mock;
-  const mintFee = ethers.parseEther('0.01');
 
   // get the tokenURI of our images
   if (process.env.UPLOAD_TO_PINATA === 'true') {
