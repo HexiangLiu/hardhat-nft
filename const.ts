@@ -5,8 +5,8 @@ export const developmentChains = ['localhost', 'hardhat'];
 export const _BASEFEE = 100000000000000000n;
 export const _GASPRICELINK = 1000000000;
 export const _amount = 1000000000000000000n;
-export const _decimals = 8;
-export const _initialAnswer = 200000000000;
+export const _decimals = 18;
+export const _initialAnswer = 2000000000000000000n;
 
 export const networkConfig: Record<string, any> = {
   11155111: {
