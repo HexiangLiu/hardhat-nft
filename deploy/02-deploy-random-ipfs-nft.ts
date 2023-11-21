@@ -96,6 +96,6 @@ const deploy = async (hre: HardhatRuntimeEnvironment) => {
   log('--------------------------');
 };
 
-deploy.tags = ['all', 'randomNft'];
+deploy.tags = ['all', 'randomNft', 'main'];
 
 export default deploy;

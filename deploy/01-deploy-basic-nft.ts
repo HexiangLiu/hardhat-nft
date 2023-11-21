@@ -25,6 +25,6 @@ const deploy = async (hre: HardhatRuntimeEnvironment) => {
   }
 };
 
-deploy.tags = ['all', 'basicNft'];
+deploy.tags = ['all', 'basicNft', 'main'];
 
 export default deploy;

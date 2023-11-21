@@ -41,6 +41,6 @@ const deploy: DeployFunction = async ({ deployments }) => {
   log('--------------------------');
 };
 
-deploy.tags = ['all', 'dynamicNft'];
+deploy.tags = ['all', 'dynamicNft', 'main'];
 
 export default deploy;
