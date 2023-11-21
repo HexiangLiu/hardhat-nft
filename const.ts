@@ -5,6 +5,8 @@ export const developmentChains = ['localhost', 'hardhat'];
 export const _BASEFEE = 100000000000000000n;
 export const _GASPRICELINK = 1000000000;
 export const _amount = 1000000000000000000n;
+export const _decimals = 8;
+export const _initialAnswer = 200000000000;
 
 export const networkConfig: Record<string, any> = {
   11155111: {
@@ -14,6 +16,7 @@ export const networkConfig: Record<string, any> = {
       '0x474e34a077df58807dbe9c96d3c009b23b3c6d0cce433e59bbf5b34f823bc56c',
     subscriptionId: '6442',
     callbackGasLimit: 400000,
+    priceFeed: '0x694AA1769357215DE4FAC081bf1f309aDC325306', // ETH/USD
   },
   31337: {
     name: 'hardhat',
